@@ -1,30 +1,30 @@
 spring:
   mail:
-    host: smtp.gmail.com
-    port: 587
-    username:
-    password:
-    protocol: smtp
-    properties:
-      mail:
-        smtp:
-          socketFactory:
-            port: 465
-            class: javax.net.ssl.SSLSocketFactory
-            fallback: false
-          auth: true
-          starttls:
-            enable: true
-          connectiontimeout: 10000
-          timeout: 10000
-          writetimeout: 10000
+      host: smtp.gmail.com
+      port: 587
+      username: ${MAIL_USER}
+      password: ${MAIL_PASS}
+      protocol: smtp
+      properties:
+        mail:
+          smtp:
+            socketFactory:
+              port: 465
+              class: javax.net.ssl.SSLSocketFactory
+              fallback: false
+            auth: true
+            starttls:
+              enable: true
+            connectiontimeout: 10000
+            timeout: 10000
+            writetimeout: 10000
 
   thymeleaf:
     enable: true
 
 envio:
   email:
-    remetente:
+    remetente: ${MAIL_USER}
     nomeRemetente: 'Rytech'
 
 server:
