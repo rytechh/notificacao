@@ -35,7 +35,13 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle
+        env:
+          EMAIL_USERNAME: ${{ secrets.MAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.MAIL_PASS }}
         run: ./gradlew build
 
       - name: Run tests
+        env:
+          EMAIL_USERNAME: ${{ secrets.MAIL_USER }}
+          EMAIL_PASSWORD: ${{ secrets.MAIL_PASS }}
         run: ./gradlew test
